@@ -27,7 +27,9 @@ def Getdata(substring):
                       'Battery_submit?':df['Is the customer submitting or collecting battery?'],'Center':df['Center']
                        })
 
-    filtered_data = data[data.apply(lambda row: row.astype(str).str.contains(substring, case=False).any(), axis=1)]
+#     filtered_data = data[data.apply(lambda row: row.astype(str).str.contains(substring, case=False).any(), axis=1)]
+    filtered_data = data[data.apply(lambda row: any(str(col).lower() == substring.lower() for col in row), axis=1)]
+
 
 
     
