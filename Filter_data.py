@@ -26,6 +26,7 @@ def Getdata(substring):
 def main():
     data = Getdata("")
     unique_entries = []
+    unique_entries.insert(0,"")
     for col in data.select_dtypes(include='object').columns:
         unique_entries += data[col].unique().tolist()
     selected_entry = st.selectbox("Select entry", options=unique_entries)
