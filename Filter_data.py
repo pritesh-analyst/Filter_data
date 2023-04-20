@@ -24,6 +24,7 @@ def Getdata(substring):
     return data
 
 def main():
+    st.set_page_config(page_title="Model to filter data", layout="wide")
     data = Getdata("")
     unique_entries = []
     unique_entries.insert(0,"")
